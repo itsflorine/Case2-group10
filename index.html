@@ -24,46 +24,73 @@
         
         <section id="two" class="invisible">
             <div class="dust" id="theme_one">
-                <article>
                     <div class="bg_pic">
                         <h2>Egypt</h2>
                     </div>
-                </article>
             </div>
             
             <div class="dust" id="theme_two">
-                <article>
                     <div class="bg_pic">
                         <h2>Rome</h2>
                     </div>
-                </article>
             </div>
             
             <div class="dust" id="theme_three">
-                <article>
                     <div class="bg_pic">
                         <h2>Greece</h2>
                     </div>
-                </article>
             </div>
         </section>
         
-        <section id="three" class="visible">
-            <article>
-                <h3>The Egyptian exposition</h3>
+        <section id="three" class="invisible">
+            <article id="egypt_one">
                 <a-scene id="map">
                     <a-assets>
-                        <img id="mapTexture" src="http://viitek.dk/images/map_sample.jpg">
+                        <img id="mapTexture" src="images/map_sample.jpg">
                     </a-assets>
                     
-                    <a-entity id="box" geometry="primitive: box; width: 6; depth: 3; height: 0.05" position="0 1 -2" rotation="90 0 0" material="src: #mapTexture"></a-entity>
+                    <a-entity id="box" geometry="primitive: box; width: 6; depth: 3; height: 0.05" position="0 1.5 -2" rotation="90 0 0" material="src: #mapTexture"></a-entity>
                     <a-entity id="lightSphere" geometry="primitive: sphere; radius: 0.05" material="shader: flat; color: #ffa1a1" light="type: ambient" position="0.3 1.05 -2"></a-entity>
                 </a-scene>
             </article>
             
-            <article>
+            <article id="egypt_two">
+                <a href="google.cz"><h3>The Egyptian exposition</h3></a>
                 <p>Scan the QR code at the exponate to bring up the task</p>
             </article>
+        </section>
+        
+        <section id="four" class="visible">
+            <article id="main_one">
+                <img src="http://viitek.dk/images/house_icon.png" alt="House icon">
+                <h3>Antique Museum</h3>
+            </article>
+            
+            <article id="main_two">
+                <h4>Welcome to the Antikmuseet</h4>
+                <p>The Antique Museum...</p>
+                <h4>Opening hours 2018:</h4>
+                <ul>
+                    <li><b>Sunday </b>12.00-16.00</li>
+                    <li><b>Monday </b>12.00-16.00</li>
+                    <li><b>Tuesday </b>12.00-16.00</li>
+                    <li><b>Wednesday </b>12.00-16.00</li>
+                    <li><b>Thursday </b>12.00-16.00</li>
+                </ul>
+                <p>Schools and gymnasiums...</p>
+            </article>
+            
+            <sidebar id="nav">
+                <nav>
+                    <ul>
+                        <li>About</li>
+                        <li>Exhibitions</li>
+                        <li>Treasure Hunt</li>
+                        <li>Classes</li>
+                        <li>Location</li>
+                    </ul>
+                </nav>
+            </sidebar>
         </section>
 		<script src="js/script.js"></script>
 	</body>

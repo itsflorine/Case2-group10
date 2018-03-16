@@ -51,7 +51,7 @@ table {
 
 @font-face {
     font-family: Mya;
-    src: url('http://viitek.dk/images/assets/MyanmarText_Bold.woff');
+    src: url(../images/assets/myanmartext_bold.woff);
 }
 
 @keyframes slide {
@@ -81,12 +81,6 @@ table {
     animation-timing-function: ease-in-out;
 }
 
-body {
-    background-color: black;
-    color: white;
-    z-index: 1;
-}
-
 #one {
     display: grid;
     grid-template-columns: auto;
@@ -94,14 +88,12 @@ body {
     grid-template-areas:
     "a1"
     "a2";
-    z-index: 4;
 }
 
 h1,
 h2 {
     text-align: center;
-    padding-top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(350%);
     font-family: 'Mya';
     color: black;
     font-size: 3rem;
@@ -148,7 +140,6 @@ article#landing_two .bg_pic {
     "a1"
     "a2"
     "a3";
-    z-index: 3;
     background-image: url('http://viitek.dk/images/white_marble.jpg');
     background-size: contain;
 }
@@ -169,22 +160,67 @@ article#landing_two .bg_pic {
     overflow: hidden;
 }
 
-.dust {
-    
-}
-
 .dust:hover {
     background-image: url('http://viitek.dk/images/assets/dust.gif');
     background-size: contain;
     transition: none;
+    background-repeat: no-repeat;
 }
 
 div#theme_one .bg_pic {
-    background-image: url('http://viitek.dk/images/pyramids.png')
+    background-image: url('http://viitek.dk/images/egypt.png')
 }
 div#theme_two .bg_pic {
-    background-image: url('http://viitek.dk/images/colosseo.png')
+    background-image: url('http://viitek.dk/images/rome.png')
 }
 div#theme_three .bg_pic {
-    background-image: url('http://viitek.dk/images/parthenon.png')
+    background-image: url('http://viitek.dk/images/greece.png')
+}
+
+#three {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "a1"
+    "a2";
+}
+
+#egypt_one {
+    grid-area: a1;
+}
+#egypt_two {
+    grid-area: a2;
+}
+
+#four {
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    grid-template-rows: 20% 1fr;
+    grid-template-areas: 
+    "a1 a1 nav"
+    "a2 a2 nav";
+    height: 100vh;
+}
+
+#main_one {
+    grid-area: a1;
+}
+#main_two {
+    grid-area: a2;
+}
+#nav {
+    grid-area: nav;
+    overflow: hidden;
+}
+nav ul li {
+    transform: rotate(90deg);
+    padding: 2.5rem;
+    padding-left: 0;
+    background-color: black;
+    color: white;
+}
+nav ul {
+    height: 100vh;
+    max-height: 100%;
 }
