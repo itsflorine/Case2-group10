@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>	
+	<head>
+		<title>The Antik Museet Treasure Hunt</title>
+	    <meta charset="UTF-8" />
+		<link rel="stylesheet" href="css/style.css" />
+        <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	</head>
+	<body>
+        <section id="one" class="invisible">
+            <article id="landing_one">
+                <div class="bg_pic">
+                    <h1>The Website</h1>
+                </div>
+            </article>
+            <article id="landing_two">
+                <div class="bg_pic">
+                    <h1>Treasure Hunt</h1>
+                </div>
+            </article>
+        </section>
+        
+        <section id="two" class="invisible">
+            <div class="dust" id="theme_one">
+                <article>
+                    <div class="bg_pic">
+                        <h2>Egypt</h2>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="dust" id="theme_two">
+                <article>
+                    <div class="bg_pic">
+                        <h2>Rome</h2>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="dust" id="theme_three">
+                <article>
+                    <div class="bg_pic">
+                        <h2>Greece</h2>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section id="three" class="visible">
+            <article>
+                <h3>The Egyptian exposition</h3>
+                <a-scene id="map">
+                    <a-assets>
+                        <img id="mapTexture" src="images/map_sample.jpg">
+                    </a-assets>
+                    
+                    <a-entity id="box" geometry="primitive: box; width: 6; depth: 3; height: 0.05" position="0 1 -2" rotation="90 0 0" material="src: #mapTexture"></a-entity>
+                    <a-entity id="lightSphere" geometry="primitive: sphere; radius: 0.05" material="shader: flat; color: #ffa1a1" light="type: ambient" position="0.3 1.05 -2"></a-entity>
+                </a-scene>
+            </article>
+            
+            <article>
+                <p>Scan the QR code at the exponate to bring up the task</p>
+            </article>
+        </section>
+		<script src="js/script.js"></script>
+	</body>
+</html>
