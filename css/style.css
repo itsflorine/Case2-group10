@@ -54,60 +54,53 @@ table {
     src: url(../images/assets/myanmartext_bold.woff);
 }
 
-@keyframes slide {
-    100% {transform: translateX(-100%);}
-}
-
 @keyframes fade_in {
     0% {transform: scale(0);}
     100% {transform: scale(1);}
+}
+
+@keyframes pulsate {
+    0% {transform: scale(1);}
+    100% {transform: scale(1.2);}
 }
 
 .invisible {
     display: none !important;
 }
 
-.slide {
-    animation-name: slide;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-in-out;
-}
-
-.fade_in {
+section {
     animation-name: fade_in;
-    animation-duration: 2s;
+    animation-duration: .5s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-in-out;
-}
-
-#one {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 50% 50%;
-    grid-template-areas:
-    "a1"
-    "a2";
 }
 
 h1,
 h2 {
-    text-align: center;
     transform: translateY(350%);
-    font-family: 'Mya';
-    color: black;
     font-size: 3rem;
 }
 
-#landing_one {
-    grid-area: a1;
-    height: 50vh;
-    overflow: hidden;
+h3 {
+    font-size: 1.4rem;
 }
-#landing_two {
-    grid-area: a2;
-    height: 50vh;
-    overflow: hidden;
+
+b {
+    font-weight: bold;
+    font-family: 'Mya';
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    text-align: center;
+    font-family: 'Mya';
+    color: black;
 }
 
 .bg_pic {
@@ -118,19 +111,46 @@ h2 {
     background-size: contain;
 }
 
-article#landing_one .bg_pic {
-    background-image: url('http://viitek.dk/images/museum.jpg');
-    background-size: cover;
-}
-article#landing_two .bg_pic {
-    background-image: url('http://viitek.dk/images/statue.jpg');
-    background-size: cover;
-}
-
 .bg_pic:hover {
     transform: scale(1.1);
     transition: 1s ease;
 }
+
+
+#one {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50% 50%;
+    grid-template-areas:
+    "a1"
+    "a2";
+}
+#landing_one {
+    grid-area: a1;
+    height: 50vh;
+    overflow: hidden;
+}
+#landing_two {
+    grid-area: a2;
+    height: 50vh;
+    overflow: hidden;
+}
+#landing_one h1 {
+    color: white;
+    opacity: .7;
+}
+#landing_two h1 {
+    opacity: .7;
+}
+article#landing_one .bg_pic {
+    background-image: url('http://viitek.dk/images/black_marble.jpg');
+    background-size: cover;
+}
+article#landing_two .bg_pic {
+    background-image: url('http://viitek.dk/images/white_marble.jpg');
+    background-size: cover;
+}
+
 
 #two {
     display: grid;
@@ -143,7 +163,6 @@ article#landing_two .bg_pic {
     background-image: url('http://viitek.dk/images/white_marble.jpg');
     background-size: contain;
 }
-
 #theme_one {
     grid-area: a1;
     height: 33.3vh;
@@ -159,68 +178,240 @@ article#landing_two .bg_pic {
     height: 33.3vh;
     overflow: hidden;
 }
-
 .dust:hover {
     background-image: url('http://viitek.dk/images/assets/dust.gif');
-    background-size: contain;
+    background-size: cover;
     transition: none;
     background-repeat: no-repeat;
+    background-position: center;
 }
-
 div#theme_one .bg_pic {
-    background-image: url('http://viitek.dk/images/egypt.png')
+    background-image: url('http://viitek.dk/images/egypt.png');
+    background-size: 40%;
+    opacity: .5;
 }
 div#theme_two .bg_pic {
-    background-image: url('http://viitek.dk/images/rome.png')
+    background-image: url('http://viitek.dk/images/rome.png');
+    background-size: 40%;
+    opacity: .5;
 }
 div#theme_three .bg_pic {
-    background-image: url('http://viitek.dk/images/greece.png')
+    background-image: url('http://viitek.dk/images/greece.png');
+    background-size: 40%;
+    opacity: .5;
 }
+.h_pic {
+    transform: translateY(-280%);
+}
+
 
 #three {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: 
-    "a1"
-    "a2";
+    height: 100vh;
+}
+#big_one {
+    margin-left: 27%;
+}
+#big_two {
+    margin-left: 47%;
+}
+#big_three {
+    margin-left: 67%;
+}
+#big_one,
+#big_two,
+#big_three {
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    background: #faeb1e;
+    font-family: 'Mya';
+    color: black;
+    font-size: 2.5rem;
+    position: fixed;
+    bottom: 1%;
+    animation-name: pulsate;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}
+#small_one,
+#small_two,
+#small_three {
+    border-radius: 50%;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: lightslategrey;
+    color: white;
+    font-family: 'Mya';
+    font-size: .8rem;
+}
+#small_one div,
+#small_two div,
+#small_three div,
+#big_one div,
+#big_two div,
+#big_three div {
+    text-align: center;
+    transform: translateY(25%);
+}
+#big_one:hover + #small_one {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 1s ease;
+    background: #faeb1e;
+    color: black;
+    font-size: 1.3rem;
+}
+#big_two:hover + #small_two {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 1s ease;
+    background: #faeb1e;
+    color: black;
+    font-size: 1.3rem;
+}
+#big_three:hover + #small_three {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: 1s ease;
+    background: #faeb1e;
+    color: black;
+    font-size: 1.3rem;
+}
+#map {
+    width: 100%;
+    height: 80%;
+    position: fixed;
+    z-index: -1;
+    opacity: .4;
+}
+#small_one {
+    position: fixed;
+    top: 90%;
+    left: 22.5%;
+}
+#small_two {
+    position: fixed;
+    top: 75%;
+    left: 13.5%;
+}
+#small_three {
+    position: fixed;
+    top: 59.5%;
+    left: 22%;
+}
+#start,
+#scan {
+    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background: #faeb1e;
+    font-family: 'Mya';
+    text-align: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: black;
+    position: fixed;
+    bottom: 8%;
+}
+#start:hover,
+#scan:hover {
+    color: #faeb1e;
+    background: black;
+    transition: .5s ease;
 }
 
-#egypt_one {
-    grid-area: a1;
-}
-#egypt_two {
-    grid-area: a2;
-}
 
 #four {
     display: grid;
-    grid-template-columns: 20% 1fr 20%;
-    grid-template-rows: 20% 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
     grid-template-areas: 
-    "a1 a1 nav"
-    "a2 a2 nav";
+    "a1 nav"
+    "a2 nav";
     height: 100vh;
 }
-
 #main_one {
     grid-area: a1;
 }
 #main_two {
     grid-area: a2;
+    text-align: center;
 }
 #nav {
     grid-area: nav;
     overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: 'Mya';
 }
-nav ul li {
-    transform: rotate(90deg);
+nav ul li div {
     padding: 2.5rem;
-    padding-left: 0;
+    margin: 1rem;
     background-color: black;
     color: white;
+    text-align: center;
 }
-nav ul {
+nav ul{
+    transform: translateX(32%);
+}
+nav ul li:hover {
+    transform: translateX(-15%);
+    margin-left: -5rem;
+    transition: 1s ease;
+}
+.home {
+    padding: 1rem;
+    background-color: lightslategray;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+.home:hover {
+    background: #faeb1e;
+    transition: .5s ease
+}
+article#main_one h3,
+article#main_two h3,
+article#main_two h4 {
+    padding: 1rem;
+}
+article#main_two p,
+article#instr_body p {
+    padding-left: 8rem;
+    padding-right: 8rem;
+    padding-top: 1rem;
+}
+
+
+#five {
     height: 100vh;
-    max-height: 100%;
+}
+#instr_head,
+#museet_head,
+#egypt_head {
+    font-family: 'Mya';
+    text-align: center;
+    background-image: url('http://viitek.dk/images/black_marble.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+div#instr_head h3,
+div#museet_head h3,
+div#egypt_head h3 {
+    padding: 3rem;
+    font-size: 3rem;
+    color: white;
+    padding-left: 0;
+    transform: translateY(30%);
+}
+#minimap {
+    height: 50%;
+    width: 50%;
+    opacity: .4;
+    float: right;
 }
