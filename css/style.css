@@ -51,7 +51,7 @@ table {
 
 @font-face {
     font-family: Mya;
-    src: url(../images/assets/myanmartext_bold.woff);
+    src: url(../../images/assets/myanmartext_bold.woff);
 }
 
 @keyframes fade_in {
@@ -62,6 +62,10 @@ table {
 @keyframes pulsate {
     0% {transform: scale(1);}
     100% {transform: scale(1.2);}
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .invisible {
@@ -209,13 +213,13 @@ div#theme_three .bg_pic {
     height: 100vh;
 }
 #big_one {
-    margin-left: 27%;
+    margin-left: 24%;
 }
 #big_two {
-    margin-left: 47%;
+    margin-left: 44%;
 }
 #big_three {
-    margin-left: 67%;
+    margin-left: 64%;
 }
 #big_one,
 #big_two,
@@ -281,25 +285,25 @@ div#theme_three .bg_pic {
 }
 #map {
     width: 100%;
-    height: 80%;
+    height: 50%;
     position: fixed;
     z-index: -1;
     opacity: .4;
 }
 #small_one {
     position: fixed;
-    top: 90%;
-    left: 22.5%;
+    top: 65%;
+    left: 22%;
 }
 #small_two {
     position: fixed;
-    top: 75%;
-    left: 13.5%;
+    top: 55%;
+    left: 13%;
 }
 #small_three {
     position: fixed;
-    top: 59.5%;
-    left: 22%;
+    top: 46%;
+    left: 21%;
 }
 #start,
 #scan {
@@ -313,7 +317,7 @@ div#theme_three .bg_pic {
     transform: translateX(-50%);
     color: black;
     position: fixed;
-    bottom: 8%;
+    bottom: 10%;
 }
 #start:hover,
 #scan:hover {
@@ -321,12 +325,17 @@ div#theme_three .bg_pic {
     background: black;
     transition: .5s ease;
 }
+article#egypt_two p {
+    position: fixed;
+    bottom: 27%;
+    right: 2%;
+}
 
 
 #four {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: auto;
+    grid-template-rows: 20% 1fr;
     grid-template-areas: 
     "a1 nav"
     "a2 nav";
@@ -337,34 +346,36 @@ div#theme_three .bg_pic {
 }
 #main_two {
     grid-area: a2;
-    text-align: center;
+    text-align: left !important;
 }
 #nav {
     grid-area: nav;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     right: 0;
     top: 0;
     font-family: 'Mya';
 }
 nav ul li div {
-    padding: 2.5rem;
-    margin: 1rem;
+    padding: 1.5rem;
+    margin: 3rem;
+    margin-right: .5rem;
     background-color: black;
     color: white;
     text-align: center;
+    transform: rotate(90deg);
 }
 nav ul{
     transform: translateX(32%);
+    margin-top: -8%;
 }
 nav ul li:hover {
-    transform: translateX(-15%);
-    margin-left: -5rem;
+    transform: translateX(-8%);
     transition: 1s ease;
 }
 .home {
     padding: 1rem;
-    background-color: lightslategray;
+    background-color: white;
     position: absolute;
     overflow: hidden;
     left: 0;
@@ -379,12 +390,16 @@ article#main_one h3,
 article#main_two h3,
 article#main_two h4 {
     padding: 1rem;
+    text-align: left;
 }
 article#main_two p,
 article#instr_body p {
-    padding-left: 8rem;
-    padding-right: 8rem;
+    padding-left: 1rem;
+    padding-right: 4rem;
     padding-top: 1rem;
+}
+article#main_two ul {
+    padding-left: 1rem;
 }
 
 
@@ -400,18 +415,73 @@ article#instr_body p {
     background-size: cover;
     background-repeat: no-repeat;
 }
+#instr_head {
+    background-image: url('http://viitek.dk/images/black_marble.jpg');
+}
 div#instr_head h3,
 div#museet_head h3,
 div#egypt_head h3 {
     padding: 3rem;
-    font-size: 3rem;
+    font-size: 2rem;
     color: white;
-    padding-left: 0;
     transform: translateY(30%);
+}
+div#instr_head h3 {
+    color: black;
 }
 #minimap {
     height: 50%;
     width: 50%;
     opacity: .4;
     float: right;
+    padding-right: 1rem;
+    padding-top: 1rem;
+}
+#qr_one {
+    height: 35%;
+    width: 35%;
+    float: left;
+    padding-left: 2rem;
+    padding-top: 1rem;
+}
+#start {
+    bottom: 1%;
+}
+
+
+#seven {
+    background-color: black;
+}
+section#seven h3,
+section#seven h4 {
+    color: white;
+    padding-top: 2rem;
+}
+section#seven p {
+    background: #fff;
+    padding: 1rem;
+    margin: 1rem;
+}
+#q_one {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "a1"
+    "a2"
+    "a3";
+    grid-row-gap: 1rem;
+}
+#q_one_one {
+    grid-area: a1;
+}
+#q_one_two {
+    grid-area: a2;
+}
+#q_one_three {
+    grid-area: a3;
+}
+section#seven p:hover {
+    background-color: #faeb1e;
+    transition: 1s ease;
 }
